@@ -1,0 +1,29 @@
+<h1>Listing barks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Full name</th>
+      <th>Dog</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @barks.each do |bark| %>
+      <tr>
+        <td><%= bark.full_name %></td>
+        <td><%= bark.dog %></td>
+        <td><%= link_to 'Show', bark %></td>
+        <td><%= link_to 'Edit', edit_bark_path(bark) %></td>
+        <td><%= link_to 'Destroy', bark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bark', new_bark_path %>

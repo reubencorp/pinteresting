@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140331035855) do
+ActiveRecord::Schema.define(version: 20140331051251) do
+
+  create_table "barks", force: true do |t|
+    t.string   "full_name"
+    t.string   "dog"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
